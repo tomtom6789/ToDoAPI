@@ -13,6 +13,12 @@ class TodosController < ApplicationController
         end 
     end 
 
+    def destroy
+        todo = Todo.find(params[:id])
+        todo.destroy
+        render json: {message: "Deleted #{todo.content} Successfully !"}
+    end 
+
 
 
 
